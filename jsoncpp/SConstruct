@@ -1,0 +1,12 @@
+env = Environment()
+env.Append(CPPFLAGS = ['-g', '-fPIC', '-Wall'])
+env.Append(CPPPATH = [
+'./include',
+'/usr/local/include',
+'/usr/include'])
+
+libjson = env.Library('json', [
+'src/lib_json/json_writer.cpp',
+'src/lib_json/json_reader.cpp',
+'src/lib_json/json_value.cpp'
+])
